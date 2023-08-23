@@ -1,0 +1,5 @@
+Name: Wangari Kirsten Njeri
+
+Admission number: 121594
+
+Project Title: A Web-Based Prediction Model for Students' Academic Performance and Recommendation of Optimal Junior Secondary School Categories in Kenya Using J48 Decison Tree Model
