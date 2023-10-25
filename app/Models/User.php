@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use PragmaRX\Google2FA\Google2FA;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'google2fa_secret', // Field to store the 2FA secret key
+        'two_factor_secret', // Field to store the 2FA secret for Laravel's built-in two-factor authentication
+        'two_factor_recovery_codes', // Field to store recovery codes
     ];
 
     /**
@@ -31,6 +35,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'google2fa_secret', // Hide the 2FA secret key
+        'two_factor_secret', // Hide the 2FA secret for Laravel's built-in two-factor authentication
+        'two_factor_recovery_codes', // Hide recovery codes
     ];
 
     /**

@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Student</h1>
-    <div>index</div>
+    <h1>Student Page</h1>
+    <div>Welcome to the student page</div>
+    <br> 
+    <a href="{{route('student.create')}}" class="text-blue-700 hover:text-blue-400">Add student details</a>
 </body>
 </html>

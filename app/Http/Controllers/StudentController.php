@@ -18,7 +18,7 @@ class StudentController extends Controller
     public function store(Request $request){
         $data = $request->validate([
             's_id' => 'required|numeric',
-            'gender' => 'required',
+            'gender' => 'required|boolean',
             'age' => 'required|numeric',
             'absences' => 'required',
             'firstterm' => 'required',
@@ -27,6 +27,7 @@ class StudentController extends Controller
         ]);
 
         $newStudent = Student::create($data);
+
         return redirect(route('student.index'));
     }
 }

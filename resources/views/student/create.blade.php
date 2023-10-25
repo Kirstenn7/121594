@@ -8,6 +8,16 @@
 </head>
 <body>
     <h1>Enter student details</h1>
+    <div>
+        @if($errors->any())
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+
+        @endif
+    </div>
     <form method="post" action="{{route('student.store')}}">
         @csrf
         @method('post')
@@ -17,9 +27,9 @@
         </div>
         <div>
             <label>Gender</label>
-            <input type="checkbox" id="male" name="gender" value="male">
+            <input type="checkbox" id="male" name="gender" value="0">
             <label for="male">M</label>
-            <input type="checkbox" id="female" name="gender" value="female">
+            <input type="checkbox" id="female" name="gender" value="1">
             <label for="female">F</label>
         </div>
         <div>
